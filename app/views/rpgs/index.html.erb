@@ -1,0 +1,37 @@
+<p>Your Gold: <%= @gold %> </p> 
+<div style="display:inline-block; border: 1px solid black">
+	<p>Farm</p>
+	<p>(earns 10-20 golds)</p>
+	<form action='/farm' method='post'>
+    	<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+		<input type='submit' value="Find Gold!">
+	</form>
+</div>
+<div style="display:inline-block; border: 1px solid black">
+	<p>Cave</p>
+	<p>(earns 5-10 golds)</p>
+	<form action='/cave' method='post'>
+    	<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+		<input type='submit' value="Find Gold!">		
+	</form>	
+</div>
+<div style="display:inline-block; border: 1px solid black">
+	<p>House</p>
+	<p>(earns 2-5 golds)</p>
+	<form action='/house' method='post'>
+    	<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+		<input type='submit' value="Find Gold!">		
+	</form>	
+</div>
+<div style="display:inline-block; border: 1px solid black">
+	<p>Casino</p>
+	<p>(takes/earns 0-50 golds)</p>
+	<form action='/casino' method='post'>
+    	<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+		<input type='submit' value="Find Gold!">		
+	</form>	
+</div>
+
+<%@log.each do |log|%>
+	<%= log %> </br>
+<% end %>
