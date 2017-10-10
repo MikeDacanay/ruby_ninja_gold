@@ -1,6 +1,8 @@
 class RpgsController < ApplicationController
   def index
-  	session[:log]= []
+  	unless session[:log]
+  		session[:log] = []
+  	end
   	unless session[:gold]
   		session[:gold] = 0
   	end
@@ -16,7 +18,9 @@ class RpgsController < ApplicationController
   end
 
   def cave
+  	random = rand(5..10)
   	session[:gold] = session[:gold] + rand(5..10)
+  	session[:log].push "Earned #{random} gold!"
   	redirect_to "/rpgs/index"
   end
 
